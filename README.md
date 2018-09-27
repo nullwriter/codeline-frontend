@@ -5,6 +5,9 @@
 ## Build Setup
 
 ``` bash
+# cd into app
+cd weather-app
+
 # install dependencies
 npm install
 
