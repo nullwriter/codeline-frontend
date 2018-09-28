@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "axios": "^0.18.0",
-    "vue-cli": "^2.9.6",
-    "vue-router": "^3.0.1"
-  }
-}
