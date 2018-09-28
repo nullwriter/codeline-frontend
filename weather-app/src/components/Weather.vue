@@ -1,7 +1,7 @@
 <template>
     <div class="card mb-4 ml-2 mr-2 weather-card" style="width: 18rem;">
         <div class="card-body" @click="GoToWeather()">
-            <h5 class="card-title">{{ this.city.name }}</h5>
+            <h5 class="card-title">{{ this.city.title }}</h5>
             <div class="card-text" v-if="this.loading">
                 <img style="width: 5rem" src="../assets/loading-weather.svg" />
             </div>
