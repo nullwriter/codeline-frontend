@@ -3,21 +3,32 @@ import App from './App'
 import VueRouter from 'vue-router'
 import Home from './components/Home'
 import Search from './components/Search'
+import WeatherDetail from './components/WeatherDetail'
 
 Vue.use(VueRouter)
 const routes = [
     { path: '/', component: Home },
-    { path: '/search/:keyword', component: Search, name: 'SearchCity' }
+    { path: '/search/:keyword', component: Search, name: 'SearchCity' },
+    { path: '/weather/:woeid', component: WeatherDetail, name: 'WeatherDetail' }
 ]
-
-// Vue.component('weather', {
-//   props: ['city'],
-//   template: '<h3>Your city is {{city}}</h3>'
-// })
 
 const router = new VueRouter({
     routes: routes
 })
+
+Vue.filter('oneDecimal', function (value) {
+    if (typeof value !== "number") {
+        return value;
+    }
+
+    var formatter = new Intl.NumberFormat('en-US', {
+        style: 'decimal',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 1
+    });
+
+    return formatter.format(value);
+});
 
 new Vue({
   el: '#app',
