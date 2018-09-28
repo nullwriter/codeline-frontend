@@ -52,7 +52,9 @@
         },
         methods:{
             GoToWeather : function(){
-                this.$router.push({ name: 'WeatherDetail', params: { woeid: this.city.woeid }})
+                if ( !this.error ) {
+                    this.$router.push({ name: 'WeatherDetail', params: { woeid: this.city.woeid, data: this.info }})
+                }
             }
         }
     }

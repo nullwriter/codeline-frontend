@@ -6,10 +6,12 @@ import Search from './components/Search'
 import WeatherDetail from './components/WeatherDetail'
 
 Vue.use(VueRouter)
+Vue.use(require('vue-moment'))
+
 const routes = [
     { path: '/', component: Home },
     { path: '/search/:keyword', component: Search, name: 'SearchCity' },
-    { path: '/weather/:woeid', component: WeatherDetail, name: 'WeatherDetail' }
+    { path: '/weather/:woeid', component: WeatherDetail, name: 'WeatherDetail', props: true }
 ]
 
 const router = new VueRouter({
